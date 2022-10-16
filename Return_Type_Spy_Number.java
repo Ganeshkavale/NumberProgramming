@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+class Return_Type_Spy_Number									//Sum of the individual digit of number is equal to product of individual digit of number.
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = sc.nextInt();
+
+		for (int i= first; i<=last;i++)
+		{
+
+			if (sumOfDigit(i)==productOfDigit(i))
+			{
+				System.out.println(i + " is a Spy number!");
+			}
+			else
+			{
+				System.out.println(i + " is not a Spy number!");
+			}
+
+		}
+		
+	}
+	
+	public static int sumOfDigit(int temp){
+
+		int sum=0;
+	
+			while (temp>0)
+			{
+				int rem = temp%10;
+
+				sum = sum +rem;
+
+				temp/=10;
+
+			}
+			return sum;
+	}
+
+	public static int productOfDigit(int temp)
+	{
+		int product=1;
+
+		for (int i = temp;i>0;i/=10)
+		{
+			int rem = i%10;
+
+			product = product * rem;
+		}
+		return product;
+
+	}
+
+}

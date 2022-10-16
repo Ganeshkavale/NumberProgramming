@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Return_Type_Ugly_Number						// The number factors which are the prime factors like 2, 3, or 5.
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = sc.nextInt();
+
+		for (int num = first; num<=last ; num++)
+		{
+			uglyNumber(num);
+		}	
+	}
+	public static void uglyNumber(int temp)
+	{
+		int num = temp;
+
+		int i;
+
+		for (i = 1; i<=6 ; i++)
+		{
+			if (num%i==0)
+			{
+				if(i==2 || i==3 || i==5)
+				{
+					System.out.println(num + " is a Ugly number!");
+					break;
+				}	
+			}
+			else if (i>5)
+			{
+				System.out.println(num + " is not a Ugly number!");
+				break;
+			}
+		}
+
+	}
+}

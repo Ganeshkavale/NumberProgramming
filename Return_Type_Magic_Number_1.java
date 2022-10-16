@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+class Return_Type_Magic_Number_1								//The Magic number is a number in which the sum of its digit is 1 and do sum till single digit that us number less than 9.
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = sc.nextInt();
+
+		for (int i= first;i<=last;i++)
+		{
+			if (magicNumberCheck(i))
+			{
+				System.out.println(i + " is a Magic number!");
+			}
+			else	
+			{
+				System.out.println(i + " is not a Magic number!");
+			}
+		}
+	}
+
+	public static boolean magicNumberCheck(int num)
+	{
+		int temp1=num;
+
+		int sum = 0;
+
+		while (sum>9 || temp1>0)
+		{
+			if (temp1==0)
+			{
+				temp1=sum;
+
+				sum=0;
+			}
+			
+			int rem = temp1%10;
+
+			sum = sum + rem;
+
+			temp1/=10;
+		}
+
+		if (sum==1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}

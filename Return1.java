@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+class Return1 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter value in millimeter(mm): ");
+
+		double mm = sc.nextDouble();
+
+		double ans = mmToCm(mm);
+
+		System.out.println(ans);
+
+		double res = cmToInch(ans);
+
+		System.out.println(res);
+
+		double ans1 = cmToFoot(ans);
+
+		System.out.println(ans1);
+
+		double ans2 = inchToKm(res);
+
+		System.out.println(ans2);
+
+	}
+
+	public static double mmToCm(double mm1) 
+	{
+		double cm = mm1 * 0.1;
+
+		return cm;
+
+	}
+
+	public static double cmToInch(double ans) 
+	{
+		double inch = ans * 0.393701;
+
+		return inch;
+
+	}
+	public static double cmToFoot(double ans) 
+	{
+		double foot = ans * 0.0328084;
+
+		return foot;
+
+	}
+
+	public static double inchToKm(double res) 
+	{
+		double km = res * 2.54*0.00001;
+
+		return km;
+
+	}
+
+}
