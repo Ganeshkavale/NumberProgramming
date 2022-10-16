@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+class Return_Type_Buzz_Number									//The buzz number is a number which ends with 7 or divisible by 7.
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = sc.nextInt();
+
+		for (int i= first;i<=last;i++)
+		{
+			if (buzzNumberCheck(i))
+			{
+				System.out.println(i + " is a Buzz number!");
+			}
+			else	
+			{
+				System.out.println(i + " is not a Buzz number!");
+			}
+		}
+	}
+
+
+	
+	public static boolean buzzNumberCheck(int temp)
+	{
+		int num = temp;
+
+		if (num%7==0 || num%10==7)
+		{
+			return true;			
+		}
+		else
+		{
+			return false;			
+		}
+	}
+}

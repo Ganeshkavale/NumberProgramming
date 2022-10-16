@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class Fibonacci_Print_Sum 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a number: ");
+
+		int num = sc.nextInt();
+
+		int n1 = 0, n2 = 1, n3;
+
+		//System.out.print(n1 + " " + " " + n2);
+
+		for (int i = 0; i<num ; i++)
+		{
+			n3 = n1 + n2;
+
+			System.out.print(" " + " " + n1 + " " + " ");
+
+
+			if (i<(num-1))
+			{
+				n1=n2;
+
+				n2= n3;
+			}
+
+		}
+		
+		int sum = fibo(n1);  //to find 10th fibonacci number put num = 10. and return sum = 7.  fibonacci number index starts with zero.
+
+		System.out.println();	
+
+		System.out.println("sum " + sum);
+	}
+	public static int fibo(int num)
+	{
+			int sum = 0;
+
+		for (int j = num; j>0 ; j/=10)
+		{
+			int rem = j%10;
+
+			sum = sum + rem;			
+		}
+		
+		return sum;
+	}
+}

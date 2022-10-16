@@ -1,0 +1,31 @@
+class Num_NoZero
+{
+	public static void main(String[] args) 
+	{
+
+		int num = 145;
+
+		int temp = num;
+
+		while (temp>0)
+		{
+			int rem = temp%10;
+
+			if (rem ==0;)
+			{
+				break;
+			}
+
+			if (rem!=0)
+			{
+				temp/=10;
+			}
+
+			if (temp==0)
+			{
+				System.out.println(num);
+			}
+		}
+		
+	}
+}

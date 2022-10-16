@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+class Return_Type_Circular_Prime_Count_Full								
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();	
+
+		int count = count(first);
+
+		rotate(first,count);
+
+	}
+
+	public static int count(int num)
+	{
+		int count = 0;
+		while(num>0)
+		{
+			num/=10;
+			count++;
+		}
+		return count;
+	}
+
+	public static void rotate(int temp1, int count)
+	{
+		int num = temp1;
+
+		int size = count - 1;
+
+		if (num==prime(num))
+		{
+
+			for (int i = 0;i<count ;i++ )
+			{
+				int rem = num%10;
+			
+				int temp = num/10;
+		
+				for (int j=0;j<size ;j++ )
+				{
+					rem=rem*10;
+				}
+				num=rem+temp;
+
+			}
+
+			if (temp1==num)
+			{
+				System.out.println(num + " is a circular Prime number");
+			}
+		}
+
+		else
+		{
+			System.out.println(num + " is not a circular Prime number");
+		}
+
+	}
+
+	public static int prime(int temp1)
+	{
+		int i;
+		for (i=2;i<=temp1 ;i++ )
+		{
+			if (temp1%i==0)
+			{
+				break;
+			}
+		}
+		return i;
+	}
+}

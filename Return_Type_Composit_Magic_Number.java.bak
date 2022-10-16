@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+class Return_Type_Composit_Magic_Number								//The Composite Magic number = composite number + magic number.
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = sc.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = sc.nextInt();
+
+		for (int i= first;i<=last;i++)
+		{
+			if (compositeMagicNumberCheck(i))
+			{
+				System.out.println(i + " is a Composite Magic number!");
+			}
+			else	
+			{
+				System.out.println(i + " is not a Composite Magic number!");
+			}
+		}
+	}
+
+	public static boolean compositeMagicNumberCheck(int num)
+	{
+		int temp=num;
+
+		int count=0;
+
+		int sum1 = 0;
+
+		for (int i = 1;i<=temp; i++)
+		{
+			if (temp%i==0)
+			{
+				count++;
+			}
+		}
+		if (count>2)
+		{
+			int temp1=num;
+
+			while (sum1>9 || temp1>0)
+			{
+				if (temp1==0)
+				{
+					temp1=sum1;
+
+					sum1=0;
+				}
+			
+				int rem = temp1%10;
+
+				sum1 = sum1 + rem;
+
+				temp1/=10;
+			}
+
+			if (sum1==1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		
+	}
+}
