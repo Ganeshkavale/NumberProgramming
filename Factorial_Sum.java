@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Factorial_Sum
+{
+	public static void main(String[] args) 
+	{		
+		Scanner a = new Scanner (System.in);
+
+		System.out.println("Enter a number: ");
+
+		int num = a.nextInt();
+
+		/* System.out.println("Enter a last number: ");
+
+		int last = a.nextInt(); */
+
+		int sum = 0;
+
+		int factorial = 1;
+
+		int in = 1;
+
+		
+		
+		while (in<= num)		
+		{
+			factorial = factorial *in;
+
+			in++;
+
+		}
+		System.out.println("The factorial of "+ num + " is : " + factorial);
+
+		while (factorial>0)
+		{
+			int rem= factorial %10;
+
+			factorial/=10;
+
+			sum+= rem;
+		}
+
+		System.out.println("The sum of rem is: " + sum);
+
+	}
+}

@@ -15,21 +15,13 @@ class Palindrome_For_Range3
 
 		int last = a.nextInt();
 
-		//int num = first;
-
 		int count = 0;
 
 		int count1 = 0;
-
-		//int reverse = 0;
-
-		
 				
 		for (int num = first;num<=last;num++)
 		{
 			int temp = num, reverse=0;
-
-			
 
 			while (temp>0)
 			{
@@ -41,26 +33,21 @@ class Palindrome_For_Range3
 				
 			}
 		
-
 			if (num ==reverse)
 			{
-				System.out.println("It is a Palindrome number: " +num);
+				System.out.println(num + " is a Palindrome number.");
 				count++;
-								
-
 			}
+
 			else
 			{
-				System.out.println("It is not a Palindrome number: " + first);
+				System.out.println( num + " is not a Palindrome number." );
 				count1++;
-				
 			}
-
-			
+						
 		}
 		System.out.println("The total count of the palindrome number is: " + count);
 		System.out.println("The total count of not palindrome number is: " + count1);
-			
-
+		
 	}
 }

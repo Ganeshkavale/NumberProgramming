@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+class Prime_Number_Range_No_Zero
+{
+	public static void main(String[] args) 
+	{		
+		Scanner a = new Scanner (System.in);
+
+		System.out.println("Enter a first number: ");
+
+		int first = a.nextInt();
+
+		System.out.println("Enter a last number: ");
+
+		int last = a.nextInt();
+
+		int count = 0;
+
+		int num=first;
+		
+		while (num<=last)		
+		{
+			int temp;
+			for (temp = 2; temp<=num;temp++ )
+			{
+				if (num%temp ==0)
+				{
+					break;
+				}
+			}
+			if (num == temp)
+			{	
+				System.out.println("The Prime number is: "+ num);
+
+				int temp1=num;
+
+				while (temp1>0)
+				{
+					int rem = temp1%10;	
+
+					if (rem == 0)
+					{
+						System.out.println("The Prime number which contains zero is: "+ temp1);
+						break;
+					}
+
+					if (rem!=0)
+					{
+						temp1/=10;
+					}
+					if (temp1==0)
+					{
+						System.out.println("The Prime number which does not contains zero is: "+ temp1);
+
+					}
+
+				}
+
+			}
+			else 
+			{
+				System.out.println(num + " is not a Prime number.");
+
+			}
+
+			num++;
+
+		}
+			
+
+	}
+		
+}
+
+
+
+
+
+
+					
